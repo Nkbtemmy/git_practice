@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="personal Web website">
+<meta name="keywords" content="Voice, voiceToWorld, speakRouder">
+<meta name="author" content="Mr NKUBITO">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="log.jpg" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="style.css" >
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>index</title>
+
+	<style type="text/css">
+
+body {font-family: Arial, Helvetica, sans-serif;
+    }
+* {box-sizing: border-box;}
+
+input[type=text],[type=email], select, textarea {
+width: 100%;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+margin-top: 6px;
+margin-bottom: 16px;
+resize: vertical;
+}
+
+input[type=submit] {
+background-color: #212e22;
+color: white;
+padding: 12px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+input[type=submit]:hover {
+background-color: #4e71d3;
+}
+
+.container {
+width: 50%;
+Margin-left: 23%;
+border-radius: 5px;
+background-color: #f2f2f2;
+padding: 20px;
+}
+h3{
+ text-align: center;
+}
+footer{
+ background-color: grey;
+ text-align: center;
+ color: honeydew;
+ position: fixed; bottom: 0; width: 100%;
+}
+nav{
+text-align:right;
+//background-color:skyblue;
+height:40px;
+padding:0;
+opacity:.8;
+marging-right:16%;
+display:fixed;
+}
+li a{
+display-style:none;
+color:black;
+text-decoration: none;
+}
+li a:hover {
+color: rgb(15, 15, 44);
+font-size:25px;
+}
+#home{
+    padding-left: 35%;
+    padding-top: 17%;
+    font-size: 180%;
+}
+span{
+    padding-left: 644px;
+}
+		section{
+            background-color:blue;
+            width: 100%;
+            //background-color: #f1f1f1;
+            height: 700px;
+            background-image: url(mac.jpg);
+            background-size: cover;
+
+		}
+section h1{
+	padding-top: 234px;
+	color: white;
+	font-size: 54px;
+	float: center;
+}
+section p{
+	color: white;
+	font-size: 34px;
+}
+		footer{
+			 background-color: grey;
+             text-align: center;
+             color: honeydew;
+             position: fixed;
+             bottom: 0; 
+             width: 100%;
+		}
+/*top navigation */
+        .topnav {
+  padding: 0;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: deepskyblue;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+ .topnav a:not(:first-child) {float: right;}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+	</style>
+</head>
+<body>
+<section>
+    <nav>
+<div class="topnav" id="myTopnav">
+  <a href="#" >LOG</a>
+  <a href="#about">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="#news">Blog</a>
+  <a href="#home" >Home</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+</nav>
+	<center>
+	<h1>Hey my name is Mr NKUBITO Emmanuel</h1>
+	<hr style="width: 152px">
+	<p>Software Engineer</p>
+        <p>
+            <a href="about"><button style="padding:23px;border-radius:32%;background-color: cadetblue;color: green;font-size: 20px;">Read More</button></a>
+        </p>
+	</center>
+</section>
+<footer>
+	All Right Reserved @ Mr NKUBITO
+</footer>
+</body>
+<script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
+</html>
