@@ -21,6 +21,7 @@ function validate(){
 else{
   //alert("thank you mn");
   window.location.href="thankyou.html";
+
 }
 }
 
