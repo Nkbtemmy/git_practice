@@ -1,20 +1,36 @@
-function validation(){
-    var a= document.getElementById("Name").value;
-    var b= document.getElementById("Email").value;
-    var c= document.getElementById("Message").value;
-    var x,y,z;
-   if(a==""){
-    // document.getElementById("name").value += "please enter your name";
-     x="pease fill in your Full Name";
-   }
-   else{x="";}
-   if(b==""){
-    y="please fill in your Email";
-   }
-   else{y="";}
-   if(c==""){
-     z="please type any message";
-   }
-   else{z="";}
-   alert(x+"\n"+y+"\n"+z);
-   }
+function validate(){
+  var a = document.getElementById('name').value;
+  var b = document.getElementById('email').value;
+  var c = document.getElementById('msg').value;
+  var x,y,z;
+  if(a=="" || b=="" || c==""){
+     if(a==""){
+      x="Enter your name";
+     }
+     else{x="";}
+     if(b==""){
+       y="enter valid email"
+     }
+     else{y="";}
+ if(c==""){
+      z="try to type anything";
+  }
+  else{z="";}
+  alert(x+"\n"+y+"\n"+z);
+}
+else{
+  //alert("thank you mn");
+  window.location.assign("https://www.w3schools.com")
+}
+}
+
+
+//responsive navigation
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
