@@ -20,7 +20,7 @@ function validate(){
 }
 else{
   //alert("thank you mn");
-  window.location.assign("https://www.w3schools.com")
+  window.location.assign("/thankyou.html")
 }
 }
 
