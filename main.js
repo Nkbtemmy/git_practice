@@ -20,10 +20,10 @@ function validate(){
 }
 else{
   //alert("thank you mn");
-  window.location.assign("/thankyou.html")
-}
-}
+  window.location.href="thankyou.html";
 
+}
+}
 
 //responsive navigation
   function myFunction() {
