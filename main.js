@@ -19,8 +19,9 @@ function validate(){
      alert(x+"\n"+y+"\n"+z);
 }
 else{
-  window.location.href="thankyou.html";
 
+  //alert("thank you mn");
+  window.location.assign("/thankyou.html");
 }
 }
 
