@@ -12,18 +12,18 @@ function validate(){
        y="enter valid email"
      }
      else{y="";}
- if(c==""){
-      z="try to type anything";
-  }
-  else{z="";}
-  alert(x+"\n"+y+"\n"+z);
+     if(c==""){
+      z="Try to type anything";
+      }
+     else{z="";}
+     alert(x+"\n"+y+"\n"+z);
 }
 else{
-  //alert("thank you mn");
-  window.location.assign("/thankyou.html")
-}
-}
 
+  //alert("thank you mn");
+  window.location.assign("/thankyou.html");
+}
+}
 
 //responsive navigation
   function myFunction() {
