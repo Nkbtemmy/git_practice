@@ -13,13 +13,14 @@ function validate(){
      }
      else{y="";}
      if(c==""){
-      z="try to type anything";
+      z="Try to type anything";
       }
      else{z="";}
      alert(x+"\n"+y+"\n"+z);
 }
 else{
   window.location.href="thankyou.html";
+
 }
 }
 
