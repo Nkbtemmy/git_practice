@@ -12,14 +12,13 @@ function validate(){
        y="enter valid email"
      }
      else{y="";}
- if(c==""){
+     if(c==""){
       z="try to type anything";
-  }
-  else{z="";}
-  alert(x+"\n"+y+"\n"+z);
+      }
+     else{z="";}
+     alert(x+"\n"+y+"\n"+z);
 }
 else{
-  //alert("thank you mn");
   window.location.href="thankyou.html";
 }
 }
