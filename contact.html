@@ -13,6 +13,8 @@
     <style>
         nav{background-color: beige;
         height: 64px;}
+        sector div{float: left;background-color: black;
+        }
     </style>
     <script type="text/javascript" src="main.js"></script>
 </head>
@@ -34,9 +36,25 @@
 </div>
 
 <h3>Contact Form</h3>
-
+<sector>
+<div  class="social">
+ <pre>
+   <label>
+    <a href="https://facebook.com/nkubito.emmy.1" target="_blank"><i class="fa fa-facebook">  Facebook</i></a>
+   </label>
+   <label>
+    <a href="https://www.linkedin.com/in/emmanuel-nkubito-36b242155/" target="_blank"><i class="fa fa-linkedin">  Linked In</i></a>
+   </label>
+   <label>
+    <a href="https://www.github.com/nkbtemmy" target="_blank"><i class="fa fa-github">  Github</i></a>
+  </label>
+   <label>
+    <a href="https://twitter.com/nkbtemmy" target="_blank"><i class="fa fa-twitter" >  Twitter</i></a>
+    </label>
+ </pre>
+</div>
 <div class="container">
-  <form method="POST" action="thankyou.html" onsubmit="validate()">
+  <form method="POST" action="" id="form" onsubmit="validate()">
     <label for="fname">Name</label>
     <input type="text" id="name" name="firstname" placeholder="Your name..">
     <label for="email">Email</label>
@@ -46,7 +64,9 @@
     <input type="submit" value="Submit">
   </form>
 </div>
+</sector>
 <footer >All Right Reserved @ Mr NKUBITO</footer>
     
+
 </body>
 </html>
