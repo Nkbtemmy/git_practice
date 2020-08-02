@@ -3,16 +3,16 @@ function validate(){
   var b = document.getElementById('email').value;
   var c = document.getElementById('msg').value;
   var x,y,z;
-  if(a=="" || b=="" || c==""){
-     if(a==""){
+  if(a==="" || b==="" || c===""){
+     if(a===""){
       x="Enter your name";
-     }
+       }
      else{x="";}
-     if(b==""){
+     if(b===""){
        y="enter valid email"
      }
      else{y="";}
-     if(c==""){
+     if(c===""){
       z="Try to type anything";
       }
      else{z="";}
