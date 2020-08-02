@@ -19,7 +19,7 @@ function validate(){
      alert(x+"\n"+y+"\n"+z);
 }
 else{
- document.getElementById("form").setAttribute("action","thankyou.html");
+ window.location.replace("/thankyou.html");
 }
 
 //responsive navigation
