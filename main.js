@@ -21,7 +21,6 @@ function validate(){
 else{
  document.getElementById("form").setAttribute("action","thankyou.html");
 }
-}
 
 //responsive navigation
   function myFunction() {
