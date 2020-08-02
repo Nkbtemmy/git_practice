@@ -18,10 +18,10 @@ function validate(){
      else{z="";}
      alert(x+"\n"+y+"\n"+z);
 }
-else{
- window.location.replace("/thankyou.html");
+ else{
+   window.location.replace("thankyou.html");
+   }
 }
-
 //responsive navigation
   function myFunction() {
     var x = document.getElementById("myTopnav");
