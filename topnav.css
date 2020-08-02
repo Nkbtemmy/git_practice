@@ -7,10 +7,11 @@
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    margin: 0em;
   }
   
   .topnav a:hover {
-    background-color: #ddd;
+    background-color: rgb(202, 160, 160);
     color: black;
   }
   
@@ -43,6 +44,10 @@
       float: none;
       display: block;
       text-align: left;
+      background-color: beige;
+    }
+    .topnav.responsive a:hover {
+      background-color: rgb(143, 143, 73);
     }
   }
   footer{
