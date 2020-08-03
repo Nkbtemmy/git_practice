@@ -17,18 +17,19 @@ function validate(){
       }
      else{z="";}
      alert(x+"\n"+y+"\n"+z);
-}
-else{
- document.getElementById("form").setAttribute("action","thankyou.html");
-}
-}
+     }
+     else{
+        document.getElementById("form").setAttribute("action","thankyou.html");
+      }
+  }
 
 //responsive navigation
   function myFunction() {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
       x.className += " responsive";
-    } else {
+    } 
+    else {
       x.className = "topnav";
     }
   }
