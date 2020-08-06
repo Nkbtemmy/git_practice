@@ -1,5 +1,3 @@
-
-
 // Initialize Firebase (ADD YOUR OWN DATA)
 var config = {
   apiKey: "AIzaSyDXquDlRsa2PLLGqS18HXWSHL50w5sSl3w",
@@ -16,17 +14,17 @@ firebase.initializeApp(config);
 var db = firebase.firestore();
 //Extract Element from form
   // Listen for form submit
-  document.getElementById('form').addEventListener('submit', submitForm);
+  document.getElementById('bform').addEventListener('submit', submitForm);
  
   // Submit form
   function submitForm(e){
     e.preventDefault();
     // get input
-    var name = getInput('name');
-    var email = getInput('email');
-    var message = getInput('msg');
-    fireData(name,email,message);
-    console.log(message);
+    var btitle = getInput('btitle');
+    var bimage = getInput('bimage');
+    var bmsg = getInput('bmsg');
+    blogData(btitle,bimage,bmsg);
+    console.log(bmsg);
   }
   // Function to get form values
   function getInput(id){
@@ -34,12 +32,12 @@ var db = firebase.firestore();
    }
   //end of extraction of form element
  //-----get-----
- function fireData(a,c,e){
- db.collection("contacts").add({
+ function blogData(a,c,e){
+ db.collection("blogs").add({
     
-    Name: a,
-    email:c,
-    message:e
+    blog_title: a,
+    blog_image:c,
+    blog_content:e
  })
  .then(function(docRef) {
     console.log("Document written with ID: ", docRef.id);
