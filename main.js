@@ -1,25 +1,28 @@
 function validate(){
-  var a = document.getElementById('name').value;
-  var b = document.getElementById('email').value;
-  var c = document.getElementById('msg').value;
-  var x,y,z;
-  if(a=="" || b=="" || c==""){
-     if(a==""){
-      x="Enter your name";
-     }
-     else{x="";}
-     if(b==""){
-       y="enter valid email"
-     }
-     else{y="";}
-     if(c==""){
-      z="Try to type anything";
-      }
-     else{z="";}
-     alert(x+"\n"+y+"\n"+z);
-}
-else{
- document.getElementById("form").setAttribute("action","thankyou.html");
+  var name = document.forms["form"]["name"];               
+    var email = document.forms["form"]["email"];      
+    var what =  document.forms["form"]["msg"];   
+   
+    if (name.value == "")                                  
+    { 
+        window.alert("Please enter your name."); 
+        name.focus(); 
+        return false; 
+    }  
+    if (email.value == "")                                   
+    { 
+        window.alert("Please enter a valid e-mail address."); 
+        email.focus(); 
+        return false; 
+    } 
+    if (what.value == "")                  
+    { 
+        alert("Type samething......."); 
+        what.focus(); 
+        return false; 
+    } 
+    document.getElementById("form").setAttribute("action","thankyou.html");
+    return true; 
 }
 
 //responsive navigation
