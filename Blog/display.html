@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>
+            display blog
+        </title>
+        <meta charset="UTF-8">
+        <meta name="description" content="personal Web website">
+        <meta name="keywords" content="Voice, voiceToWorld, speakRouder">
+        <meta name="author" content="Mr NKUBITO">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="log.jpg" type="../image/x-icon" /><link rel="stylesheet" type="text/css" href="style.css" >
+        <link rel="stylesheet" href="../topnav.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+<style>
+         .responsive {
+             margin-left:123px ;
+  width: 80%;
+  height: auto/2;
+  
+}
+            #bcontent{
+            margin:12px 103px 0px 153px;
+            font-family: Roboto;
+           font-style: normal;
+           font-weight: bold;
+           font-size: 17px;
+            }
+            body{
+      margin: 0em;
+      padding:0em;
+    }
+    nav{background-color: beige;
+    height: 74px;}
+        </style>
+    </head>
+    <body onload="displays()">
+        <nav >
+            <div class="topnav" id="myTopnav" >
+              <a href="#" >LOG</a>
+              <a href="../index.html">About</a>
+              <a href="display.html">Blog</a>
+              <a href="addingblog.html">Adding Blog</a>
+              <a href="../index.html" >Home</a>
+              <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+              </a>
+            </div>
+            </nav>
+        <center><h1 id="btitle">Blog title</h1></center>
+        <div id="bimage"><img src="" alt="" id="image" alt="Nature" class="responsive" width="600" height="400"></div>
+        <div id="bcontent">Contents</div>
+        <div style="text-align:center; margin-top: 45px;">
+            <label for="comment" style="top: 0; font-size: 13px;"> Comment</label><textarea name="subscribution" id="sub" cols="30" rows="4" placeholder="Drop your Ideal...."></textarea>
+        </div>
+    </body>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+    <script >
+ // Initialize Firebase (ADD YOUR OWN DATA)
+var config = {
+  apiKey: "AIzaSyDXquDlRsa2PLLGqS18HXWSHL50w5sSl3w",
+  authDomain: "voicetoworld.firebaseapp.com",
+  databaseURL: "https://voicetoworld.firebaseio.com",
+  projectId: "voicetoworld",
+  storageBucket: "voicetoworld.appspot.com",
+  messagingSenderId: "164303672571",
+  appId: "1:164303672571:web:0b1fb4e3744699ac9a4c5e",
+  measurementId: "G-22B3X8437Y"
+};
+firebase.initializeApp(config);
+
+var db = firebase.firestore();
+function displays(){ 
+    var docRef = db.collection("blogs").doc("iKDhrNXDyIPcKvXtVM84");
+    docRef.get().then(function(doc) {
+    if (doc.exists) {
+        var x=doc.data();
+        document.getElementById('btitle').innerHTML=x.blog_title;
+        document.getElementById('image').setAttribute("src",x.blog_image);
+        document.getElementById('bcontent').innerHTML=x.blog_content;
+        console.log("Document data:", doc.data());
+    } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+    }
+    })
+    .catch(function(error) {
+    console.log("Error getting document:", error);
+     });
+        }
+    </script>
+
+</html>

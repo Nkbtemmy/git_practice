@@ -46,3 +46,6 @@ var db = firebase.firestore();
     console.error("Error adding document: ", error);
  });
 }
+
+//display blog
+fun

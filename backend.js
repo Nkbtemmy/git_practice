@@ -1,5 +1,3 @@
-
-
 // Initialize Firebase (ADD YOUR OWN DATA)
 var config = {
   apiKey: "AIzaSyDXquDlRsa2PLLGqS18HXWSHL50w5sSl3w",
@@ -16,17 +14,35 @@ firebase.initializeApp(config);
 var db = firebase.firestore();
 //Extract Element from form
   // Listen for form submit
-  document.getElementById('form').addEventListener('submit', submitForm);
+  document.getElementById('Cform').addEventListener('submit', submitForm);
  
   // Submit form
   function submitForm(e){
     e.preventDefault();
     // get input
-    var name = getInput('name');
-    var email = getInput('email');
-    var message = getInput('msg');
-    fireData(name,email,message);
-    console.log(message);
+    var Name = getInput('cname');
+    var Email = getInput('cemail');
+    var Message = getInput('cmsg');
+
+
+    if(Name==="" || Email==="" || Message===""){
+      if(Name===""){
+       x="Enter your name";
+        }
+      else{x="";}
+      if( Email===""){
+        y="enter valid email"
+      }
+      else{y="";}
+      if(Message===""){
+       z="Try to type anything";
+       }
+      else{z="";}
+      alert(x+"\n"+y+"\n"+z);
+ }
+ else{
+    ContactData(Name,Email,Message);
+    console.log(Name+"  is inserted");
   }
   // Function to get form values
   function getInput(id){
@@ -34,17 +50,20 @@ var db = firebase.firestore();
    }
   //end of extraction of form element
  //-----get-----
- function fireData(a,c,e){
+ function ContactData(a,c,e){
  db.collection("contacts").add({
     
-    Name: a,
-    email:c,
-    message:e
+    NAME: a,
+    EMAIL:c,
+    MESSAGE:e
  })
  .then(function(docRef) {
     console.log("Document written with ID: ", docRef.id);
+    window.location.replace('thankyou.html');
  })
  .catch(function(error) {
     console.error("Error adding document: ", error);
  });
+}
+
 }
