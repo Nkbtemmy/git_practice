@@ -26,6 +26,7 @@
       <a href="#" >LOG</a>
       <a href="signup.html">SignIn/Up</a>
       <a href="about.html">About</a>
+      <a href="blog/display.html">Blog</a>
       <a href="contact.html">Contact</a>
       <a href="#" >Home</a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -33,9 +34,9 @@
       </a>
     </div>
     </nav>
- <main style="text-align: center;">
+ <main style="text-align: center;" > 
 
-	<h1>Hi, I'm Mr NKUBITO Emmanuel</h1>
+	<h1 >Hi, I'm Mr NKUBITO Emmanuel</h1>
 	<hr style="width: 152px">
 	<p>Software Engineer</p>
         <p>
@@ -47,4 +48,14 @@
 </footer>
 <script type="text/javascript" src="main.js"></script>
 </body>
+<script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
 </html>
