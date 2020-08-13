@@ -1,13 +1,65 @@
 <html>
     <head>
+<meta charset="UTF-8">
+<meta name="description" content="personal Web website">
+<meta name="keywords" content="Voice, voiceToWorld, speakRouder">
+<meta name="author" content="Mr NKUBITO">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="log.jpg" type="image/x-icon" /><link rel="stylesheet" type="text/css" href="style.css" >
+<link rel="stylesheet" href="topnav.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
         <title>Thank you </title>
+        <style>
+            h2{
+                text-align: center;
+                margin-top: 10%;
+                font-size: 23px;
+                color: darkorange;
+            }
+             section a{
+                display: inline;
+                margin: 12px;
+            }
+            section div{
+                text-align: center;
+                margin-top: 14%;
+                font-size: 23px;
+            }
+            nav{background-color: beige;
+                  height: 74px;}
+        </style>
     </head>
-    <body onload="thanks()">
-    <h2>welcome</h2>
-    </body>
-    <script>
-        function thanks(){
-            alert("thanks to you for contacting me \n welcome home");
-        }
+    <body>
+        <nav >
+            <div class="topnav" id="myTopnav" >
+              <a href="#" >LOG</a>
+              <a href="signup.html">SignIn/Up</a>
+              <a href="about.html">About</a>
+              <a href="blog/display.html">Blog</a>
+              <a href="contact.html">Contact</a>
+              <a href="#" >Home</a>
+              <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+              </a>
+            </div>
+            </nav>
+            <section>
+    <h2>Thank you for contact Us</h2>
+<div>
+    <a href="index.html"> <button> Go home </button></a>
+    <a href="blog/display.html"><button>Read My Blog</button></a>
+</div>
+</section>
+<script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
     </script>
+    </body>
 </html>

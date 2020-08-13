@@ -3,18 +3,21 @@
       <!DOCTYPE html>
 <html>
 <head>
+<title>signup</title>
 <meta charset="UTF-8">
 <meta name="description" content="personal Web website">
 <meta name="keywords" content="Voice, voiceToWorld, speakRouder">
 <meta name="author" content="Mr NKUBITO">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="log.jpg" type="image/x-icon" />
+<link rel="stylesheet" href="topnav.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <title>signup</title>
-    </head>
-    <style>
-        
+<style>
 /*addition*/
+        body{
+      margin: 0em;
+      padding:0em;
+    }
 /* Center the image and position the close button */
 .imgcontainer {
   text-align: center;
@@ -50,7 +53,7 @@ span.psw {
 }
 
 /* Full-width input fields */
-input[type=text], input[type=password] {
+input[type=email], input[type=password] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -61,7 +64,7 @@ input[type=text], input[type=password] {
 
 
 /* Add a background color when the inputs get focus */
-input[type=text]:focus, input[type=password]:focus {
+input[type=email]:focus, input[type=password]:focus {
   background-color: #ddd;
   outline: none;
 }
@@ -170,23 +173,11 @@ hr {
      width: 100%;
   }
 }
-
-    </style>
-    <body>
-        <meta charset="UTF-8">
-<meta name="description" content="personal Web website">
-<meta name="keywords" content="Voice, voiceToWorld, speakRouder">
-<meta name="author" content="Mr NKUBITO">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="log.jpg" type="image/x-icon" />
-<link rel="stylesheet" href="topnav.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<title>Contact Us</title>
-    <style>
-        nav{background-color: beige;
-        height: 64px;}
-    </style>
-    <script type="text/javascript" src="main.js"></script>
+nav{background-color: beige;
+    height: 64px;}
+</style>
+    
+<script type="text/javascript" src="main.js"></script>
 </head>
 <body>
 <div>
@@ -196,7 +187,7 @@ hr {
   <a href="signup.html">SignIn/Up</a>
   <a href="about.html">About</a>
   <a href="contact.html">Contact</a>
-  <a href="blog.html">Blog</a>
+  <a href="blog/display.html">Blog</a>
   <a href="index.html" >Home</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
@@ -206,7 +197,7 @@ hr {
 </div>
 <!--form of signup and Sign -->     
 <div id="id01" >
-    <form class="modal-content" action="">
+    <form class="modal-content" action="#" id="signups" onsubmit="writeUserData()" meth >
       <div class="container">
      <center>
          <h2> Signup Form</h2>
@@ -214,13 +205,13 @@ hr {
     </center>
         <hr>
         <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required>
+        <input type="email" placeholder="Enter Email" name="email" id="Uemail" required>
   
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <input type="password" placeholder="Enter Password" name="psw" id="Upass" required>
   
         <label for="psw-repeat"><b>Repeat Password</b></label>
-        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+        <input type="password" placeholder="Repeat Password" name="psw-repeat" id="Urep_pass" required>
         
         <label>
           <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
@@ -230,17 +221,17 @@ hr {
   
         <div class="clearfix">
             <button type="button" onclick="document.getElementById('id02').style.display='block'" class="cancelbtn" >Login</button>
-            <button type="submit" class="signupbtn">Sign Up</button>
+            <button type="submit" class="signupbtn" >Sign Up</button>
         </div>
       </div>
     </form>
   </div>
   <div id="id02" class="modal">
   
-    <form class="modal-content animate" id="MyForm" action="" method="post">
+    <form class="modal-content animate" id="MyForm" action="#" method="POST">
       <div class="container">
         <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
+        <input type="email" placeholder="Enter Username" name="uname" required>
   
         <label for="psw"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" required>
@@ -258,8 +249,11 @@ hr {
     </form>
   </div>
   <footer >All Right Reserved @ Mr NKUBITO</footer>
-  
-  <script>
+  <script type="text/javascript" src="main.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+  <script type="text/javascript" src="backend.js"></script>
+<script>
   // Get the modal
   var modal = document.getElementById('id02');
   
@@ -268,8 +262,12 @@ hr {
       if (event.target == modal) {
           modal.style.display = "none";
       }
-  }
+    }
   </script>
+
+
+  <!--<script type="text/javascript" src="userback.js"></script>
+  -->
   
   </body>
   </html>
