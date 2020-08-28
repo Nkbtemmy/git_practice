@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 5px; }
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 46px ;
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+<body id="blogs">
+
+<h2 style="text-align: center;">Page to display on Bblogs</h2>
+
+
+  <div class="column">
+    <div class="card">
+      <h3>Card 2</h3>
+      <p>Some text</p>
+      <p>Some text</p>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <h3>Card 3</h3>
+      <p>Some text</p>
+      <p>Some text</p>
+    </div>
+  </div>
+  <span id="output"></span>
+  <button id="butto" onclick="getBlogPost()">click</button>
+  <div class="column">
+    <div class="card">
+      <h3>Card 4</h3>
+      <p>Some text</p>
+      <p>Some text</p>
+    </div>
+  </div>
+</div>
+<script>
+    //Getting Blogs
+function getBlogPost(){
+    fetch('http://localhost:2300/api/v1/articles/')
+  .then(res => res.json())
+  .then(json => console.log(json))
+  .then(function (blogs) {
+                appendData(blogs);
+            })
+  function appendData(blogs) {
+              let output = '<h2>Blogs</h2>';
+      for (var i = 0; i < blogs.length; i++) {
+                `
+       <div class="row">
+      <div class="column">
+        <div class="card">
+          <h3>${blogs.title}</h3>
+          <p>${blogs.content}</p>
+          <b>
+          <p style="float: right;">created at ${blogs.date}</p>
+          </b>
+        </div>
+      </div>
+      </div>
+   `;
+              }
+
+   document.getElementById('output').innerHTML = output;
+ }
+}
+
+
+
+
+
+
+
+ 
+   // window.onload=getBlogPost();
+</script>
+<script src=""></script>
+</body>
+</html>

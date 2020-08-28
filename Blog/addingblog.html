@@ -27,7 +27,6 @@
         h2{
             margin-left: 523px;
         }
-
     </style>
 </head>
 <body>
@@ -46,11 +45,11 @@
     </div>
     <h2>Blog </h2>
     <div class="container">
-        <form method="POST" action="#" id="bform" >
+        <form method="POST" action="#" id="bform"  onsubmit="saveBlog()" >
           <label for="title">Title</label>
           <input type="text" id="btitle" name="btitle" placeholder="Definition of life">
-          <label for="image">Image</label>
-          <input type="file" id="bimage" name="bimage" >
+          <label for="author">Author</label>
+          <input type="text" id="bimage" name="bimage" >
           <br><label for="Message">Message</label>
           <textarea id="bmsg" name="bmsg" placeholder="Life is ...." style="height:220px"></textarea>
           <input type="submit" id="sub"  value="Save">
@@ -58,6 +57,30 @@
       </div>
       </sector>
       <footer >All Right Reserved @ Mr NKUBITO</footer>
+   <script>
+  function saveBlog(){
+    let title = document.getElementById('btitle').value;
+  let author = document.getElementById('bimage').value;
+  let content  = document.getElementById('bmsg').value;
+    fetch(`http://127.0.0.1:2300/api/v1/articles/new`, { 
+      // Adding method type 
+      method: "POST", 
+      // Adding body or contents to send 
+      body: JSON.stringify({ 
+       title,author,content
+      }), 
+      // Adding headers to the request 
+      headers: { 
+          "Content-type": "application/json; charset=UTF-8"
+      } 
+    }) 
+    // Converting to JSON 
+    .then(response => response.json()) 
+    // Displaying results to console 
+    .then(json => console.log(json))
+    .catch(err=>console.log('Adding Blog Error happen')); 
+  } 
+   </script>
       <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
       <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
       <script type="text/javascript"></script>

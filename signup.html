@@ -53,7 +53,7 @@ span.psw {
 }
 
 /* Full-width input fields */
-input[type=email], input[type=password] {
+input[type=email],input[type=text], input[type=password] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -64,7 +64,7 @@ input[type=email], input[type=password] {
 
 
 /* Add a background color when the inputs get focus */
-input[type=email]:focus, input[type=password]:focus {
+input[type=email]:focus,input[type=text]:focus, input[type=password]:focus {
   background-color: #ddd;
   outline: none;
 }
@@ -125,9 +125,9 @@ button:hover {
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 2% auto 10% auto; /* 5% from the top, 15% from the bottom and centered */
+  margin: 2% auto 2% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 40%; /* Could be more or less, depending on screen size */
+  width: 50%; /* Could be more or less, depending on screen size */
 
 }
 
@@ -197,16 +197,20 @@ nav{background-color: beige;
 </div>
 <!--form of signup and Sign -->     
 <div id="id01" >
-    <form class="modal-content" action="#" id="signups" onsubmit="writeUserData()" meth >
+    <form class="modal-content"  action="#" id="signups" method="POST" >
       <div class="container">
      <center>
          <h2> Signup Form</h2>
          <p>Please fill in this form to create an account.</p>
     </center>
         <hr>
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="Enter your Username" name="name" id="Uname" required>
+
+
         <label for="email"><b>Email</b></label>
         <input type="email" placeholder="Enter Email" name="email" id="Uemail" required>
-  
+
         <label for="psw"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" id="Upass" required>
   
@@ -216,7 +220,6 @@ nav{background-color: beige;
         <label>
           <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
         </label>
-  
         <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
   
         <div class="clearfix">
@@ -231,10 +234,10 @@ nav{background-color: beige;
     <form class="modal-content animate" id="MyForm" action="#" method="POST">
       <div class="container">
         <label for="uname"><b>Username</b></label>
-        <input type="email" placeholder="Enter Username" name="uname" required>
+        <input type="email" placeholder="Enter Username" name="uname" id="email" required>
   
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
           
         <button type="submit">Login</button>
         <label>
@@ -242,7 +245,7 @@ nav{background-color: beige;
         </label>
       </div>
   
-      <div class="container" style="background-color:#f1f1f1; height:23px; ">
+      <div class="container" style="background-color:#f1f1f1; height:123px; ">
         <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
         <span class="psw">Forgot <a href="#">password?</a></span>
       </div>
@@ -252,7 +255,6 @@ nav{background-color: beige;
   <script type="text/javascript" src="main.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
-  <script type="text/javascript" src="backend.js"></script>
 <script>
   // Get the modal
   var modal = document.getElementById('id02');
@@ -264,7 +266,7 @@ nav{background-color: beige;
       }
     }
   </script>
-
+<script type="text/javascript" src="fetchUser.js"></script>
 
   <!--<script type="text/javascript" src="userback.js"></script>
   -->

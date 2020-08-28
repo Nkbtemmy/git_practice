@@ -43,9 +43,12 @@
   font-size: 16px;
   resize: none;
 }
+span {
+background-color: blue;
+}
         </style>
     </head>
-    <body onload="displays()">
+    <body onload="displays()" style="background-color:grey">
         <nav >
             <div class="topnav" id="myTopnav" >
               <a href="#" >LOG</a>
@@ -57,12 +60,15 @@
               </a>
             </div>
             </nav>
-        <center><h1 id="btitle">Blog title</h1></center>
+        <div style="background-color: white;margin:5% ;">
+        <center ><h1 id="btitle">Blog title</h1></center>
         <div id="bimage"><img src="" alt="" id="image" alt="Nature" class="responsive" width="600" height="400"></div>
         <div id="bcontent">Contents</div>
         <div style="text-align:center; margin-top: 45px;">
             <label for="comment" style="margin-top: 0px; font-size: 23px;"> Comment</label><textarea name="subscribution" id="sub" cols="30" rows="4" placeholder="Drop your Ideal...."></textarea>
         </div>
+    </div>
+    <footer style="background-color: #ccc; color:black;"> ALL Right Reserved to Mr NKUBITO</footer>
     </body>
     <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>

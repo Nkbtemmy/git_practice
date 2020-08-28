@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>indd</title>
+    </head>
+    <body>
+        <button onClick="myfunction(data)">click</button>
+        <div id="myData"></div>
+    <script>
+        function myfunction(){
+        fetch('http://127.0.0.1:2300/api/v1/articles/')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                appendData(data);
+            })
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
+        function appendData(data) {
+            var mainContainer = document.getElementById("myData");
+            for (var i = 0; i < data.length; i++) {
+                var div = document.createElement("div");
+                div.innerHTML = 'Name: ' + data[i].title + ' ' + data[i].content;
+                mainContainer.appendChild(div);
+            }
+        }}
+    </script>
+    </body>
+</html>
