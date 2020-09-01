@@ -25,9 +25,8 @@
             background-color: rgb(29, 231, 204);
         }
         h2{
-            margin-left: 523px;
+           text-align: center;
         }
-
     </style>
 </head>
 <body>
@@ -46,11 +45,11 @@
     </div>
     <h2>Blog </h2>
     <div class="container">
-        <form method="POST" action="#" id="bform" >
+        <form method="POST" action="#" id="bform"  onsubmit="saveBlog()" >
           <label for="title">Title</label>
           <input type="text" id="btitle" name="btitle" placeholder="Definition of life">
-          <label for="image">Image</label>
-          <input type="file" id="bimage" name="bimage" >
+          <label for="author">Author</label>
+          <input type="text" id="bimage" name="bimage" placeholder="Mr NKUBITO" >
           <br><label for="Message">Message</label>
           <textarea id="bmsg" name="bmsg" placeholder="Life is ...." style="height:220px"></textarea>
           <input type="submit" id="sub"  value="Save">
@@ -60,9 +59,11 @@
       <footer >All Right Reserved @ Mr NKUBITO</footer>
       <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
       <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
-      <script type="text/javascript"></script>
+      <script type="text/javascript" src="../fetchUser.js"></script>
       <script type="text/javascript" src="saveblog.js"></script>
-      
+      <script type="text/javascript" src="../main.js"></script>
+
+     
       </body>
       </html>
       

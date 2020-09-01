@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 5px; }
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 800px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 48px ;
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+<body id="blogs">
+
+
+
+  <h1>Getting started with fetch API</h1>
+  <button id="fetchUserDataBtn">click</button>
+  <div id="response"></div>
+<script >
+  document.getElementById('fetchUserDataBtn').addEventListener('click',fetchUserDataBtn);
+  function fetchUserDataBtn(){
+  fetch('https://voicetoworld.herokuapp.com/api/v1/articles')
+  .then(
+    res =>{
+      res.json().then(
+        data =>{
+          console.log(data.blogs);
+          let output = '<h2 style="text-align: center;">Page to display on Blogs</h2>';
+          output += '<span>';
+      data.blogs.forEach((blog) =>{
+        var str = blog.content;
+        var res = str.substr(0, 60);
+        var time = blog.date.toLocaleString().substr(0, 10);
+        output += `
+        <div class="column">
+           <div class="card">
+            <h5 style="text-align:center; font-size:15px">${blog.title}</h5>
+             <p>${res}....</p>
+             <p style="float:right">${time}</p>
+          </div>
+       </div>
+        `;
+      });
+      output +='</span>';
+      document.getElementById('response').innerHTML = output;
+        }
+      )
+    }
+  )
+  .catch(err => console.log("Error occur during retreiving blogs"))
+}
+
+</script>
+</div>
+</body>
+</html>
