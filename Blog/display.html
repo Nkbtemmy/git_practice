@@ -49,17 +49,20 @@ background-color: blue;
         </style>
     </head>
     <body onload="displays()" style="background-color:grey">
-        <nav >
-            <div class="topnav" id="myTopnav" >
-              <a href="#" >LOG</a>
-              <a href="addingblog.html">Adding Blog</a>
-              <a href="display.html">Blog</a>
-              <a href="../index.html" >Home</a>
-              <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-              </a>
-            </div>
-            </nav>
+        <div >
+            <nav >
+              <div class="topnav" id="myTopnav" >
+                <a href="#" >LOG</a>
+                <a href="allBlog.html">Blogs</a>
+                <a href="display.html">Blog</a>
+                <a href="addingblog.html">Adding Blog</a>
+                <a href="../index.html" >Home</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                  <i class="fa fa-bars"></i>
+                </a>
+              </div>
+              </nav>
+          </div>
         <div style="background-color: white;margin:5% ;">
         <center ><h1 id="btitle">Blog title</h1></center>
         <div id="bimage"><img src="" alt="" id="image" alt="Nature" class="responsive" width="600" height="400"></div>
@@ -70,6 +73,7 @@ background-color: blue;
     </div>
     <footer style="background-color: #ccc; color:black;"> ALL Right Reserved to Mr NKUBITO</footer>
     </body>
+    <script type="text/javascript" src="../main.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
     <script >
