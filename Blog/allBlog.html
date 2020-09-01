@@ -56,7 +56,8 @@ body {
 <script >
   document.getElementById('fetchUserDataBtn').addEventListener('click',fetchUserDataBtn);
   function fetchUserDataBtn(){
-  fetch('https://voicetoworld.herokuapp.com/api/v1/articles').then(
+  fetch('https://voicetoworld.herokuapp.com/api/v1/articles')
+  .then(
     res =>{
       res.json().then(
         data =>{
@@ -82,7 +83,9 @@ body {
         }
       )
     }
-  )}
+  )
+  .catch(err => console.log("Error occur during retreiving blogs"))
+}
 
 </script>
 </div>
