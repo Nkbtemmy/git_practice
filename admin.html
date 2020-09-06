@@ -1,0 +1,364 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 30%;
+  height: 300px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  width: 70%;
+  border-left: none;
+  height: 300px;
+}
+nav{background-color: beige;
+        height: 64px;}
+        sector div{float: left;background-color: rgb(180, 166, 166);
+        }
+/*edit */
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #98b1e6;
+  opacity: 0.8;
+  padding-top: 50px;
+}
+/* Modal Content/Box */
+.modal-content {
+  margin: 2% auto 2% auto; /* 5% from the top, 15% from the bottom and centered */
+  width: 50%; /* Could be more or less, depending on screen size */
+
+}
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+#bform{
+    width: 100%;
+}
+/*subblog*/
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 50%;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 5px; }
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 800px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 48px ;
+  background-color: #f1f1f1;
+}
+/*table*/
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="topnav.css">
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="main.js"></script>
+</head>
+<body onload="fetchUserDataBtn()">
+    <nav >
+        <div class="topnav" id="myTopnav" >
+          <a href="index.html" >LOG</a>
+          <a href="contact.html">Contact</a>
+          <a href="blog/display.html">Blog</a>
+          <a href="about.html">About</a>
+          <a href="index.html" >Home</a>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+        </nav>
+<h2 style="text-align: center; color: cadetblue;">Admin Panel</h2>
+<div class="tab" style="height:7527px;">
+    <center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.codespeedy.com%2Fwp-content%2Fuploads%2F2018%2F12%2Favatar1.png&f=1&nofb=1" class="img-circle" height="65" width="65" alt="Avatar">
+    </center><br>
+    <h4 style="text-align: center;">Author</h4>
+  <button class="tablinks" onclick="openCity(event, 'Blogs')" id="defaultOpen">Blogs</button>
+  <button class="tablinks" onclick="openCity(event, 'contacts')">contacts</button>
+  <button id="user" class="tablinks" onclick="openCity(event, 'users'),fetchUsers()">users</button>
+</div>
+
+<div id="Blogs" class="tabcontent" height='100%;''>
+  <!--Displaying Blogs-->
+  <div id="response"></div>
+</div>
+
+
+<div id="contacts" class="tabcontent" style="height:527px;">
+  <h3 style="text-align: center;">users</h3>
+  <p id=>contacts is the capital of France.</p> 
+ 
+</div>
+
+<div id="users" class="tabcontent" style="height:527px;">
+   <!--Displaying Users-->
+  <div id="userss"></div>
+</div>
+<footer>Created by @ Mr NKUBITO</footer>
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+<script>
+    // Get the modal
+    var modal = document.getElementById('id02');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+      }
+  
+    </script>
+      <script >
+       // document.getElementById('defaultOpen').addEventListener('click',fetchUserDataBtn);
+       
+        function fetchUserDataBtn(){
+        fetch('https://voicetoworld.herokuapp.com/api/v1/articles')
+        .then(
+          res =>{
+            res.json().then(
+              data =>{
+                console.log(data.blogs);
+                let output = '<span>';
+            data.blogs.forEach((blog) =>{
+              var str = blog.content;
+              var ids = blog._id;
+              var y = "'"+ids+"'";
+              var res = str.substr(0, 60);
+              var time = blog.date.toLocaleString().substr(0, 10);
+              output += `
+              <div class="column">
+                 <div class="card">
+                  <h5 style="text-align:center; font-size:15px">${blog.title}</h5>
+                   <p>${res}....</p>
+                   <p style="float:right">${time}</p>
+                   <button id="del" onclick="deleteBlog(${y})" class="btn"><i class="fa fa-trash" style="font-size:24px;color:red"></i></button>
+                   <button id="update" ><i class="fa fa-edit" style="font-size:24px;color:blue"></i></button>
+                   </div>
+             </div>
+              `;
+            });
+            output +='</span>';
+            document.getElementById('response').innerHTML = output;
+              }
+            )
+          }
+        )
+        .catch(err => console.log("Error occur during retreiving blogs"))
+      }
+      //function to delete blog
+      function deleteBlog(id){
+        //e.preventDefault();
+       //var ask = confirm('Are you sure you want to delete');
+       var r = confirm("Are you sure you want to delete ?");
+       if (r == true){
+        const access =JSON.parse(window.localStorage.getItem('accessToken'));
+        const options = {
+          method: 'DELETE',
+          //mode: 'no-cors',
+          headers: {
+              'Content-Type': 'application/json',
+              'Authorization':  `Bearer `+ access
+          }
+      }
+      
+      fetch(`https://voicetoworld.herokuapp.com/api/v1/article/erase/${id}`, options)
+          .then(res => {
+              if (res.ok) {
+                  return Promise.resolve('User deleted.');
+              } else {
+                  return Promise.reject('An error occurred.');
+              }
+          })
+          .then(res => {
+            console.log(res),
+            window.location.reload();
+          })
+          //.catch(err => console.log("Error occur during Deleting blogs"));
+          .catch(err => console.log(err.message));
+      
+        }
+      } 
+      //users
+      
+//getting user list
+function fetchUsers(){
+  fetch('https://voicetoworld.herokuapp.com/api/v1/users')
+  .then(
+    res =>{
+      res.json().then(
+        data =>{
+          console.log(data);
+          let output =` 
+          <table id="customers">
+             <tr>
+               <th>Name</th>
+               <th>Email</th>
+               <th>Created At</th>
+               <th colspan="2">operation</th>
+             </tr>`;
+             console.log(data.users);
+      data.users.forEach((user) =>{
+     var id = user._id;
+     var y = "'"+id+"'";
+       output += `
+        <tr>
+          <td>${user.name}</td>
+          <td>${user.email}</td>
+          <td>${user.updatedAt}</td>
+          <td><button onclick="deleteUser(${y})" id="del" class="btn"><i class="fa fa-trash" style="font-size:24px;color:red"></i></button></td>
+           <td><button id="update" ><i class="fa fa-edit" style="font-size:24px;color:blue"></i></button></td>
+        </tr>
+        `;
+      });
+      output +='</table>';
+      document.getElementById('userss').innerHTML = output;
+        }
+      )
+    }
+  )
+  .catch(err => console.log("Error occur during retreiving Users"))
+}
+      //function to delete blog
+      function deleteUser(id){
+        //e.preventDefault();
+       //var ask = confirm('Are you sure you want to delete');
+       var r = confirm("Are you sure you want to delete this User ?");
+       if (r == true){
+        const access =JSON.parse(window.localStorage.getItem('accessToken'));
+        const options = {
+          method: 'DELETE',
+          headers: {
+              'Content-Type': 'application/json',
+              'Authorization':  `Bearer `+ access
+          }
+      }
+      fetch(`https://voicetoworld.herokuapp.com/api/v1/user/erase/${id}`, options)
+          .then(res => {
+              if (res.ok) {
+                  return Promise.resolve('User deleted.');
+              } else {
+                  return Promise.reject('An error occurred.');
+              }
+          })
+          .then(res => {
+            console.log(res),
+            window.location.reload();
+          })
+          //.catch(err => console.log("Error occur during Deleting blogs"));
+          .catch(err => console.log(err.message));
+      
+        }
+      } 
+
+      </script>
+ <script src=""></script>  
+</body>
+</html> 

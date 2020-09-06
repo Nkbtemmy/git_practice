@@ -5,7 +5,7 @@
     let password  = document.getElementById('Upass').value;
     let conf_password  = document.getElementById('Urep_pass').value;
     if(password == conf_password ){
-      fetch("https://voicetoworld.herokuapp.com/api/v1/user/new", { 
+      fetch("https://voicetoworld.herokuapp.com/api/v1/user", { 
         method: "POST", 
         body: JSON.stringify({ 
           email,
@@ -23,6 +23,7 @@
     else{
       alert("Un-marched Password");
     }
+    document.getElementById('signups').reset();
   }
   
   function signIn(e){
@@ -44,10 +45,20 @@
       } 
     }) 
     .then(response => response.json()) 
-    .then(json => console.log(json))
+    .then(data => {
+      console.log(data)
+     // localStorage.setItem("accessToken", data.accessToken);
+     console.log(data.token);
+     const token = data.token;
+     window.localStorage.setItem("accessToken", JSON.stringify(token));
+     window.setTimeout(() =>{window.location.href = "admin.html"; }, 5000); 
+    })
     .catch(err=>console.log('Login Error happen')); 
+    document.getElementById('MyForm').reset();
+
   }
-    
+         //localStorage.setItem("lastname", "Smith");
+    //.then(data => console.log(data.token))
 function addPost(e){
   e.preventDefault();
   let title = document.getElementById('btitle').value;
@@ -90,6 +101,7 @@ function saveBlog(){
     .catch(err=>console.log('Adding Blog Error happen'));  
   }
 }
+
     document.getElementById("signups").addEventListener("submit", addUser);
     document.getElementById("MyForm").addEventListener("submit", signIn);
     //document.getElementById('bform').addEventListener('submit', saveBlog);

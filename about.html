@@ -32,38 +32,64 @@
   max-width: 100%;
   height: 100%;
 }
+@media only screen and (max-width: 790px) {
+  html,body{
+        height: 100%;
+        margin:0%;
+      }
+        nav{background-color: beige;
+        height: 64px;}
+        sector div{float: left;background-color: rgb(180, 166, 166);
+        }
+        .aboutme{
+         font-family: Roboto;
+         font-style: normal;
+         font-size: 15px;
+         color: #000000;
+         padding-top: 12% ;
+         height: 70%;
+        }
+        .aboutmephoto{
+          background-image: url("");
+          background-size: cover;
+          height: 70%;
+        }
+        img {
+  max-width: 100%;
+  height: 100%;
+}
+}
     </style>
 </head>
 <body>
 <div>
-    <nav>
-<div class="topnav" id="myTopnav" >
-  <a href="#" >LOG</a>
-  <a href="signup.html">SignIn/Up</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-  <a href="blog/display.html">Blog</a>
-  <a href="index.html" >Home</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
-</nav>
+  <nav>
+    <div class="topnav" id="myTopnav" >
+      <a href="index.html" >LOG</a>
+      <a href="contact.html">Contact</a>
+      <a href="blog/display.html">Blog</a>
+      <a href="about.html">About</a>
+      <a href="index.html" >Home</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    </nav>
 </div>
 
 <h3>Know More About Me</h3>
 <sector>
   <div class="aboutme">
       <p>
-      I’m a Software Engineer, YouTuber, and student who is passionatest about 
+      I’m a Software Engineer, YouTuber, and student whose with passion of
       helping people become more capable and productive.
       </p>
       <p>
-      Most of my work today is done at Andela in order to share my experiments with world 
+      Most of my work today is done at Andela in order to share my experience with world 
       in becoming a more effective Proffessional software Engineer.
       </p>
       <p>
-      As am always wishing to become a software engineer , then i start my path by choosing 
+      As am always wishing to become a software engineer , then i started my path by choosing 
       to continue my studies in College of Science and technology in program of Computer and 
       Software Engineering and joining Andela Leadership fellowship  program and continue
       using all those online resources .</p>
@@ -91,6 +117,10 @@
   <p>PHP</p>
   <div class="containers">
     <div class="skills php">60%</div>
+  </div>
+  <p>C++</p>
+  <div class="containers">
+    <div class="skills cpp">52%</div>
   </div>
 </div>
 </sector>

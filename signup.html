@@ -11,7 +11,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="log.jpg" type="image/x-icon" />
 <link rel="stylesheet" href="topnav.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 /*addition*/
         body{
@@ -99,7 +98,7 @@ button:hover {
 
 /* Add padding to container elements */
 .container {
-  padding: 16px;
+  padding: 6px;
 }
 
 /* The Modal (background) */
@@ -125,7 +124,7 @@ button:hover {
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 2% auto 2% auto; /* 5% from the top, 15% from the bottom and centered */
+  margin: 2% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
   width: 50%; /* Could be more or less, depending on screen size */
 
@@ -161,7 +160,7 @@ hr {
 }
 
 /* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 700px) {
   .cancelbtn, .signupbtn {
      width: 100%;
   }
@@ -172,6 +171,14 @@ hr {
   .cancelbtn {
      width: 100%;
   }
+  /* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 2% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+
+}
 }
 nav{background-color: beige;
     height: 64px;}
@@ -265,6 +272,7 @@ nav{background-color: beige;
           modal.style.display = "none";
       }
     }
+
   </script>
 <script type="text/javascript" src="fetchUser.js"></script>
 
