@@ -160,28 +160,32 @@ nav{background-color: beige;
         </div>
         </nav>
 <h2 style="text-align: center; color: cadetblue;">Admin Panel</h2>
-<div class="tab" style="height:7527px;">
+<div class="tab" style="height:100vh;">
     <center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.codespeedy.com%2Fwp-content%2Fuploads%2F2018%2F12%2Favatar1.png&f=1&nofb=1" class="img-circle" height="65" width="65" alt="Avatar">
     </center><br>
     <h4 style="text-align: center;">Author</h4>
   <button class="tablinks" onclick="openCity(event, 'Blogs')" id="defaultOpen">Blogs</button>
+  <button class="tablinks" onclick="openCity(event, 'blog')">create Blog</button>
   <button class="tablinks" onclick="openCity(event, 'contacts')">contacts</button>
   <button id="user" class="tablinks" onclick="openCity(event, 'users'),fetchUsers()">users</button>
 </div>
 
-<div id="Blogs" class="tabcontent" height='100%;''>
+<div id="Blogs" class="tabcontent" height='100vh;'>
   <!--Displaying Blogs-->
   <div id="response"></div>
 </div>
+<div id="blog" class="tabcontent" height='100vh;'>
+  <!--Displaying User-->
+  <iframe src="/Blog/addingblog.html" style="width:100%;height:100vh;"></iframe>
+</div>
 
-
-<div id="contacts" class="tabcontent" style="height:527px;">
+<div id="contacts" class="tabcontent" style="height:100vh;">
   <h3 style="text-align: center;">users</h3>
   <p id=>contacts is the capital of France.</p> 
  
 </div>
 
-<div id="users" class="tabcontent" style="height:527px;">
+<div id="users" class="tabcontent" style="height:100vh;">
    <!--Displaying Users-->
   <div id="userss"></div>
 </div>
