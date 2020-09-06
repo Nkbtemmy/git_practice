@@ -21,21 +21,29 @@
         sector div{float: left;background-color: black;
         }
         .container{
-            margin-left: 133px;
+            margin-left: 233px;
             background-color: rgb(29, 231, 204);
         }
         h2{
            text-align: center;
+           
         }
+        @media only screen and (max-width: 870px) {
+          .container{
+            margin-left: 103px;
+            background-color: rgb(72, 139, 130);
+        }
+          }
     </style>
 </head>
 <body>
     <div >
-      <nav >
+      <nav>
         <div class="topnav" id="myTopnav" >
-          <a href="#" >LOG</a>
-          <a href="display.html">Blog</a>
-          <a href="addingblog.html">Adding Blog</a>
+          <a href="../index.html" >LOG</a>
+          <a href="../signup.html">Login</a>
+          <a href="../contact.html">Contact</a>
+          <a href="../about.html">About</a>
           <a href="../index.html" >Home</a>
           <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
@@ -62,8 +70,6 @@
       <script type="text/javascript" src="../fetchUser.js"></script>
       <script type="text/javascript" src="saveblog.js"></script>
       <script type="text/javascript" src="../main.js"></script>
-
-     
       </body>
       </html>
       

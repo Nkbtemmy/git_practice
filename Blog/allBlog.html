@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 * {
   box-sizing: border-box;
@@ -44,50 +45,111 @@ body {
   padding: 48px ;
   background-color: #f1f1f1;
 }
+/*table*/
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
 </style>
 </head>
-<body id="blogs">
-
+<body id="blogs" onload="fetchUsers()">
 
 
   <h1>Getting started with fetch API</h1>
-  <button id="fetchUserDataBtn">click</button>
-  <div id="response"></div>
-<script >
-  document.getElementById('fetchUserDataBtn').addEventListener('click',fetchUserDataBtn);
-  function fetchUserDataBtn(){
-  fetch('https://voicetoworld.herokuapp.com/api/v1/articles')
+  <button id="user" >click</button>
+  <div id="userss"></div>
+  <script >
+
+//getting user list
+function fetchUsers(){
+  fetch('https://voicetoworld.herokuapp.com/api/v1/users')
   .then(
     res =>{
       res.json().then(
         data =>{
-          console.log(data.blogs);
-          let output = '<h2 style="text-align: center;">Page to display on Blogs</h2>';
-          output += '<span>';
-      data.blogs.forEach((blog) =>{
-        var str = blog.content;
-        var res = str.substr(0, 60);
-        var time = blog.date.toLocaleString().substr(0, 10);
-        output += `
-        <div class="column">
-           <div class="card">
-            <h5 style="text-align:center; font-size:15px">${blog.title}</h5>
-             <p>${res}....</p>
-             <p style="float:right">${time}</p>
-          </div>
-       </div>
+          console.log(data);
+          let output =` 
+          <table id="customers">
+             <tr>
+               <th>Name</th>
+               <th>Email</th>
+               <th>Created At</th>
+               <th colspan="2">operation</th>
+             </tr>`;
+             console.log(data.users);
+      data.users.forEach((user) =>{
+     var id = user._id;
+     var y = "'"+id+"'";
+       output += `
+        <tr>
+          <td>${user.name}</td>
+          <td>${user.email}</td>
+          <td>${user.updatedAt}</td>
+          <td><button onclick="deleteUser(${y})" id="del" class="btn"><i class="fa fa-trash" style="font-size:24px;color:red"></i></button></td>
+           <td><button id="update" ><i class="fa fa-edit" style="font-size:24px;color:blue"></i></button></td>
+        </tr>
         `;
       });
-      output +='</span>';
-      document.getElementById('response').innerHTML = output;
+      output +='</table>';
+      document.getElementById('userss').innerHTML = output;
         }
       )
     }
   )
-  .catch(err => console.log("Error occur during retreiving blogs"))
+  .catch(err => console.log("Error occur during retreiving Users"))
 }
-
-</script>
+      //function to delete blog
+      function deleteUser(id){
+        //e.preventDefault();
+       //var ask = confirm('Are you sure you want to delete');
+       var r = confirm("Are you sure you want to delete this User ?");
+       if (r == true){
+        const access =JSON.parse(window.localStorage.getItem('accessToken'));
+        const options = {
+          method: 'DELETE',
+          headers: {
+              'Content-Type': 'application/json',
+              'Authorization':  `Bearer `+ access
+          }
+      }
+      fetch(`https://voicetoworld.herokuapp.com/api/v1/user/erase/${id}`, options)
+          .then(res => {
+              if (res.ok) {
+                  return Promise.resolve('User deleted.');
+              } else {
+                  return Promise.reject('An error occurred.');
+              }
+          })
+          .then(res => {
+            console.log(res),
+            window.location.reload();
+          })
+          //.catch(err => console.log("Error occur during Deleting blogs"));
+          .catch(err => console.log(err.message));
+      
+        }
+      } 
+ </script>
 </div>
+<script></script>
 </body>
 </html>
